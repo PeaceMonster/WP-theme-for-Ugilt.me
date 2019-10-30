@@ -1,0 +1,170 @@
+/*
+Theme Name: ugilt.me
+Author: Mikkel Ugilt
+Description: Et tema til ugilt.me
+Version: 0.0.1
+Tags: css
+*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+
+
+.sidebar {
+    grid-area: Sidebar;
+    width: 50px;
+    background-image: linear-gradient(90deg, rgb(2, 31, 69), rgb(2, 31, 69), rgb(2, 31, 69));    
+}
+
+.navBar {
+    margin: 30px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.navBar li {
+    color: white;
+    text-decoration: none;
+    padding: 15px 0;
+    font-size: 1.3em;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    display: block;
+}
+
+.navbar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navBar li:hover {
+    background-color: rgb(7, 44, 92);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 4% repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-area: header;
+    background-position-x: center;
+    background-position-y: 40%;
+    background-size: cover;
+}
+
+.header .title {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+}
+
+.header p {
+    color: white;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px black;
+}
+
+.header h1 {
+    font-size: 500%;
+    color: white;
+    margin: 0;
+    text-shadow: 0 0 10px black;
+}
+
+.content {
+    grid-area: content;
+}
+
+.post {
+    background-color: white;
+    position: relative;
+    padding: 2% 2%;
+    margin: 2% 3%;
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 5px;
+}
+
+.post h2 {
+    font-size: 2.7em;
+    margin: 0;
+}
+
+.post p {
+    font-size: 1.2em;
+}
+
+.footer {
+    grid-area: footer;
+}
+.footer p {
+    text-align: center;
+    padding: 0;
+    margin: 3px;
+    color: lightslategray;
+    display: block;
+}
+
+.sidePanel {
+    grid-area: sidePanel;
+    height: auto;
+    width: 100%;
+}
+
+ul.children {
+	font-size: 0.75em;
+}
+
+.indhold {
+    width: 60%;
+    height: auto;
+    box-shadow: 0 0 5px;
+    padding: 2% 2%;
+    margin: 2% 3%;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-rows: 60vh minmax(150vh, min-content) 50px;
+    grid-template-areas: 
+    "Sidebar header header"
+    "Sidebar content sidePanel"
+    "Sidebar footer footer"; 
+}
+@media only screen and (max-width: 812px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: auto 60vh auto 50vh 50px;
+        grid-template-areas: 
+        "Sidebar"
+        "header"
+        "content"
+        "sidePanel"
+        "footer";
+    }
+    .sidebar {
+        display: inline-block;
+        width: 100%;
+        height: 50px;
+    }
+    .post {
+        width: 90%;
+    }
+    .header h1 {
+        font-size: 300%;
+    }
+    .header .title {
+        grid-column: 2 / 5;
+    }
+}

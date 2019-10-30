@@ -1,0 +1,11 @@
+.container {
+    grid-template-rows: 30vh minmax(150vh, min-content) 50px;
+}
+@media only screen and (max-width: 812px) {
+    .container {
+        grid-template-rows: auto 60vh auto 50px;
+    }
+}
+.post {
+    box-shadow: 0 0 0;
+}
