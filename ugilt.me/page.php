@@ -39,8 +39,13 @@
 		var windowWidth = window.innerWidth
 		if (windowWidth <= 812) {
 			if (navBarStatus == 0) {
-				$('#navBar').animate({height: '400px'}, 'slow');
-				$('#navBarContent').css('display', 'inline-block');
+				let currentHeight = $('#navBar').height();
+				$('#navBar').css('height','auto');
+				$('#navBarContent').css('display', 'block');
+				let autoHeight = $('#navBar').height();
+				$('#navBar').height(currentHeight).animate({height: autoHeight}, 'slow', () => {
+					$('#navBar').css('height','auto');
+				});
 				$('#navBarContent').animate({opacity: '1'});
 				navBarStatus = 1;
 			} else {
